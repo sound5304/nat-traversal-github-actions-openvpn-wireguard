@@ -187,7 +187,7 @@ jobs:
       - name: Punch NAT towards client IP address for 10 minutes (in background)
         if: ${{ steps.check.outputs.run }}
         run: >
-          sudo nping --udp --ttl 4 --no-capture --source-port 443 --count 20 --delay 28s
+          sudo nping --udp --ttl 4 --no-capture --source-port 443 --count 999 --delay 10s
           --dest-port ${{ steps.user.outputs.port }} ${{ steps.user.outputs.ip }} &
 
       ## Uncomment to connect to ssh-j.com service, for debugging using SSH
